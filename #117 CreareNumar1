@@ -1,0 +1,21 @@
+#include <cmath>
+#include <limits.h>
+void numar(int n, int *a,int &k)
+{
+    int maxi=INT_MIN;
+    int mini=INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        maxi=std::max(a[i],maxi);
+        mini=std::min(a[i],mini);
+    }
+    if(mini!=0){
+    maxi*=pow(10,int(log10(mini))+1);
+    maxi+=mini;
+    }
+    else
+    {
+        maxi*=10;
+    }
+    k=maxi;
+}
